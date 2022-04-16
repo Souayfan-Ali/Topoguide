@@ -1,0 +1,29 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+{% if Itineraire_list %}
+<div>
+    <div>
+        <h1 >Itineraire</h1>
+    </div>
+    <ul>
+    <table id="customers">
+        <tr>
+            <th>Destination</th>
+            <th>Duration</th>
+            <th>Max altitude</th>
+            <th>Difficulty</th>
+          </tr>
+    {% for Itineraire in Itineraire_list %}
+    <tr>
+        <th><a href="{% url 'polls:Itineraire_DetailView' Itineraire.id %}">{{ Itineraire.titre }}</a></th>
+        <th>{{ Itineraire.duree_estimee}}</th>
+        <th>{{ Itineraire.altitude_max }}</th>
+        <th>{{ Itineraire.difficulte_estimee }}</th>
+      </tr>{% endfor %}
+    </table>
+{% else %}
+    <p>No polls are available.</p>
+
+{% endif %}
+</div>
