@@ -6,12 +6,12 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
 <div class="fixed">
-    <div class="topleft"><a href="/polls/">TOPOGUIDE</a></div>
+    <div class="topleft"><a href="/polls/" style="color: rgb(0, 0, 0);">TOPOGUIDE</a></div>
     <div class="topright">
         {% if user.username %}
-            <a href="{% url 'polls:logout' %}"><input type="button" value="logout" ></a>
+            <a href="{% url 'polls:logout' %}"><input type="button" class="button" value="logout" ></a>
         {% else %}
-            <a href="{% url 'polls:login' %}"><input type="button" value="Login" ></a>
+            <a href="{% url 'polls:login' %}"><input type="button" class="button" value="Login" ></a>
         {% endif %}
     </div>
     <div class="topright2">

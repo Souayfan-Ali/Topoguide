@@ -7,6 +7,7 @@
 </h1>
 </div>
 <div>
+<div class="div2">
     <p>Date:{{ sortie_.date_de_sortie }}</p>
     <p>Duree reelle:{{ sortie_.duree_reelle }}</p>
     <p>Nombre de participants:{{ sortie_.nombre_de_personne }}</p>
@@ -16,15 +17,15 @@
     <p>Commentaire:{{ sortie_.commentaire }}</p>
 </div>
 {% if user.username == sortie_.utilisateur %}
-<div>
+<div class="div3">
     <form action="{% url 'polls:Modifier' sortie_.id %}" method="post" >
-        <label for="Date">Date </label><br>
+        <label for="Date">Date:</label><br>
         <input id="Date" type="date" name="Date"><br>
         <label for="Duree_reelle">Duree reelle:</label><br>
         <input id="Duree_reelle" type="text" name="Duree_reelle"><br>
-        <label for="Nb_participants"> Nb participants:</label><br>
+        <label for="Nb_participants"> Nombre de participants:</label><br>
         <input id="Nb_participants" type="number" name="Nb_participants"><br>
-        <label for="Type_randonneurs">Type randonneurs:</label><br>
+        <label for="Type_randonneurs">Type de randonneurs:</label><br>
         <select name="Type_randonneurs" id="Type_randonneurs">
             <option value="debutants">debutants</option>
             <option value="tous experimentes">tous experimentes</option>
@@ -40,11 +41,12 @@
         <input id="Difficulte_ressentie" type="number" name="Difficulte_ressentie"><br>
         <label for="commentaire">Commentaire:</label><br>
         <input id="commentaire" type="textarea" name="commentaire"><br>
-        <input type="submit" value="Enrigistre">
+        <input type="submit" class="div1" value="Enrigistre">
         {% csrf_token %}
         {{ form }}
         <input type="reset" value="Annuler">
     </form>
+</div>
 </div>
 {% endif %}
 {% endblock content %}

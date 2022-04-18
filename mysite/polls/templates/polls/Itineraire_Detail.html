@@ -2,13 +2,12 @@
 {% load static %}
 {% block content %}
 <div>
-<h1 >{{ user.username }}</h1>
 <h1 >{{ Itineraire.titre }}</h1>
 </div>
 <table id="customers2">
     <tr>
-        <th>par</th>
-        <th>Date</th>
+        <th style="color:rgb(255, 0, 0);">Par</th>
+        <th style="color:rgb(255, 0, 0);">Date</th>
         <th></th>
       </tr>
 {% for sortie in sortie_list %}
@@ -16,13 +15,15 @@
     <th>{{ sortie.utilisateur }}</th>
     <th>{{ sortie.date_de_sortie }}</th>
     {% if user.username == sortie.utilisateur %}
-    <th><a href="{% url 'polls:Consulter' sortie.id %}"><input type="button" value="Modifier"></a></th>
+    <th><a href="{% url 'polls:Consulter' sortie.id %}"><input type="button" class="button3" value="Modifier"></a></th>
     {% else %}
-    <th><a href="{% url 'polls:Consulter' sortie.id %}"><input type="button" value="Consulter"></a></th>
+    <th><a href="{% url 'polls:Consulter' sortie.id %}"><input type="button" class="button3" value="Consulter"></a></th>
     {% endif %}
   </tr>{% endfor %}
 </table>
 {% if user.username %}
-<a href="{% url 'polls:Ajouter_une_Sortie' Itineraire.id %}"><input type="button" value="Ajouter" ></a>
+<div class="topright3">
+<a href="{% url 'polls:Ajouter_une_Sortie' Itineraire.id %}"><input type="button" value="Ajouter" class="button2" ></a>
+</div>
 {% endif %}
 {% endblock content %}

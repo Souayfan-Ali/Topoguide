@@ -31,7 +31,7 @@
 .fixed {
     position: relative;
     height: 50px;
-    background-color: rgba(32, 232, 232, 0.175);
+    background-color: rgba(255, 0, 0);
 } 
 .topleft {
   position: absolute;
@@ -42,7 +42,7 @@
 .topright{
   position: absolute;
   right: 6px;
-  top: 13px;
+  top: 10px;
   font-size: 20px;
 }
 .topright2{
@@ -51,3 +51,116 @@
   top: 16px;
   font-size: 15px;
 }
+.button {
+  background-color: #0f130c;
+  border: none;
+  color: white;
+  padding: 8px 10px;
+  text-align: center;
+  display: inline-block;
+  font-size: 15px;
+  margin: -1px 2px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+.button2 {
+  background-color: #0f130c;
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  display: inline-block;
+  font-size: 15px;
+  margin: 10px 2px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+.button3 {
+  background-color: #188b1a;
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  display: inline-block;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+.div1 {
+  width: 80%;
+  border-radius: 5px;
+  background-color: #bab9b9;
+  padding: 20px;
+}
+.div11 {
+  position: relative;
+  width: 80%;
+  border-radius: 5px;
+  background-color: #bab9b9;
+  padding: 20px;
+
+}
+.div2 {
+  position: absolute;
+  width: 40%;
+  border-radius: 5px;
+  padding: 20px;
+}
+.div3 {
+  position: absolute;
+  left: 40%;
+  width: 40%;
+  border-radius: 5px;
+  background-color: #bab9b9;
+  padding: 20px;
+}
+  input[type=submit]{
+  position: absolute;
+  width: 30%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  }
+  input[type=reset] {
+    position: relative;
+    left: 40%;
+    width: 30%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  select,input[type=text],select,input[type=textarea]{
+    width: 80%;
+    padding: 5px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    }
+    input[type=date]{
+      width: 60%;
+      padding: 5px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      }
+input[type=number]{
+      width: 80%;
+      padding: 5px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      }
