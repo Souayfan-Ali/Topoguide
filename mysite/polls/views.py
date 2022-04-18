@@ -4,6 +4,7 @@ from django.template import loader
 from .models import Itineraire,sortie
 from .forms import SearchForm 
 from django.http import HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
 
 def Itineraire_list(request):
     Itineraire_list = Itineraire.objects.all()
@@ -47,3 +48,4 @@ def Editer_une_Sortie(request, Itineraire_id):
         'Itineraire_': Itineraire_,
     }
     return HttpResponse(template.render(context, request))
+

@@ -1,5 +1,6 @@
 {% load static %}
-
+<a href="{% url 'polls:login' %}"><input type="button" value="Login" ></a>
+<h1 >{{ user.username }}</h1>
 <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
 {% if Itineraire_list %}
 <div>

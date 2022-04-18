@@ -14,3 +14,8 @@
     padding-bottom: 12px;
     text-align: left;
   }
+  #main-navbar{
+    color: white;
+    min-height: 14vh;
+    font-size: 15px;
+  }
