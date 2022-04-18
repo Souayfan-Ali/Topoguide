@@ -3,9 +3,9 @@
 <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
 {% block content %}
 <div>
+<h1 >{{ user.username }}</h1>
 <h1 >{{ Itineraire.titre }}</h1>
 </div>
-<a href="{% url 'polls:Editer_une_Sortie' Itineraire.id %}"><input type="button" value="ADD" ></a>
 <table id="customers">
     <tr>
         <th>par</th>
@@ -14,9 +14,10 @@
       </tr>
 {% for sortie in sortie_list %}
 <tr>
-    <th>{{ sortie.username}}</th>
+    <th>{{ sortie.utilisateur }}</th>
     <th>{{ sortie.date_de_sortie }}</th>
-    <th><input type="button" value="Consulter"></th>
+    <th><a href="{% url 'polls:Consulter' sortie.id %}"><input type="button" value="Consulter"></a></th>
   </tr>{% endfor %}
 </table>
+<a href="{% url 'polls:Ajouter_une_Sortie' Itineraire.id %}"><input type="button" value="Ajouter" ></a>
 {% endblock content %}

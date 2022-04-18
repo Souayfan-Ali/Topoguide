@@ -2,6 +2,7 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
 {% block content %}
+<h1 >{{ user.username }}</h1>
 <h1 >{{ Itineraire_.titre }}</h1>
 <h1 >{{ Itineraire_.id }}</h1>
 <div>
@@ -26,6 +27,8 @@
           </select><br>
         <label for="Difficulte_ressentie">Difficulte ressentie:</label><br>
         <input id="Difficulte_ressentie" type="number" name="Difficulte_ressentie"><br>
+        <label for="Commentaire">Commentaire:</label><br>
+        <input id="Commentaire" type="textarea" name="Commentaire"><br>
         <input type="submit" value="Enrigistre">
         {% csrf_token %}
         {{ form }}

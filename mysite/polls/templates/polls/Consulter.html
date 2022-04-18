@@ -1,0 +1,16 @@
+{% load static %}
+<div>
+<h1 ><a href="{% url 'polls:Itineraire_DetailView' sortie_.itineraire.id %}">{{ sortie_.itineraire.titre }}</a>
+    -Sortie de {{ sortie_.utilisateur }}
+</h1>
+</div>
+<div>
+    <p>Date:{{ sortie_.date_de_sortie }}</p>
+    <p>Duree reelle:{{ sortie_.duree_reelle }}</p>
+    <p>Nombre de participants:{{ sortie_.nombre_de_personne }}</p>
+    <p>Type de randonneurs:{{ sortie_.Type_randonneurs }}</p>
+    <p>Meteo:{{ sortie_.meteo }}</p>
+    <p>Difficulte ressentie:{{ sortie_.difficulte }}</p>
+    <p>Commentaire:{{ sortie_.Commentaire }}</p>
+</div>
+

@@ -18,6 +18,7 @@ def Itineraire_DetailView(request, Itineraire_id):
     if request.method == 'POST':
         form = SearchForm(request.POST)
         if form.is_valid():
+            utilisateur=request.user.username
             Date = form.cleaned_data['Date']
             Duree_reelle = form.cleaned_data['Duree_reelle']
             Nb_participants = form.cleaned_data['Nb_participants']
@@ -25,7 +26,8 @@ def Itineraire_DetailView(request, Itineraire_id):
             Meteo = form.cleaned_data['Meteo']
             Itineraire_ = get_object_or_404(Itineraire, pk=Itineraire_id)
             Difficulte_ressentie = form.cleaned_data['Difficulte_ressentie']
-            ins = sortie(itineraire=Itineraire_,date_de_sortie=Date,duree_reelle=Duree_reelle,nombre_de_personne=Nb_participants,experience=Type_randonneurs,meteo=Meteo,difficulte=Difficulte_ressentie)
+            Commentaire = form.cleaned_data['Commentaire']
+            ins = sortie(utilisateur=utilisateur,itineraire=Itineraire_,date_de_sortie=Date,duree_reelle=Duree_reelle,nombre_de_personne=Nb_participants,experience=Type_randonneurs,meteo=Meteo,difficulte=Difficulte_ressentie)
             ins.save()
         else:
             Itineraire_ = get_list_or_404(Itineraire)
@@ -38,14 +40,25 @@ def Itineraire_DetailView(request, Itineraire_id):
     sortie_list = sortie.objects.filter(itineraire=Itineraire_)
     return render(request, 'polls/Itineraire_Detail.html', {'Itineraire': Itineraire_ , 'form': form, 'sortie_list': sortie_list})
 
-def Editer_une_Sortie(request, Itineraire_id):
+def Ajouter_une_Sortie(request, Itineraire_id):
     try:
         Itineraire_ = get_object_or_404(Itineraire, pk=Itineraire_id)
-    except Itineraire.DoesNotExist:
+    except Itineraire_.DoesNotExist:
         raise Http404("Itineraire does not exist")
-    template = loader.get_template('polls/Editer_une_Sortie.html')
+    template = loader.get_template('polls/Ajouter_une_Sortie.html')
     context = {
         'Itineraire_': Itineraire_,
+    }
+    return HttpResponse(template.render(context, request))
+
+def Consulter(request, sortie_id):
+    try:
+        sortie_ = get_object_or_404(sortie, pk=sortie_id)
+    except sortie_.DoesNotExist:
+        raise Http404("sortie does not exist")
+    template = loader.get_template('polls/Consulter.html')
+    context = {
+        'sortie_': sortie_
     }
     return HttpResponse(template.render(context, request))
 
