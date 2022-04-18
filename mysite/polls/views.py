@@ -26,8 +26,8 @@ def Itineraire_DetailView(request, Itineraire_id):
             Meteo = form.cleaned_data['Meteo']
             Itineraire_ = get_object_or_404(Itineraire, pk=Itineraire_id)
             Difficulte_ressentie = form.cleaned_data['Difficulte_ressentie']
-            Commentaire = form.cleaned_data['Commentaire']
-            ins = sortie(utilisateur=utilisateur,itineraire=Itineraire_,date_de_sortie=Date,duree_reelle=Duree_reelle,nombre_de_personne=Nb_participants,experience=Type_randonneurs,meteo=Meteo,difficulte=Difficulte_ressentie)
+            commentaire = form.cleaned_data['commentaire']
+            ins = sortie(utilisateur=utilisateur,itineraire=Itineraire_,date_de_sortie=Date,duree_reelle=Duree_reelle,nombre_de_personne=Nb_participants,experience=Type_randonneurs,meteo=Meteo,difficulte=Difficulte_ressentie,commentaire=commentaire)
             ins.save()
         else:
             Itineraire_ = get_list_or_404(Itineraire)
@@ -62,3 +62,26 @@ def Consulter(request, sortie_id):
     }
     return HttpResponse(template.render(context, request))
 
+def Modifier(request, sortie_id):
+    try:
+        sortie_ = get_object_or_404(sortie, pk=sortie_id)
+    except sortie_.DoesNotExist:
+        raise Http404("sortie does not exist")
+    if request.method == 'POST':
+        form = SearchForm(request.POST)
+        if form.is_valid():
+            sortie_.date_de_sortie = form.cleaned_data['Date']
+            sortie_.Duree_reelle = form.cleaned_data['Duree_reelle']
+            sortie_.nombre_de_personne = form.cleaned_data['Nb_participants']
+            sortie_.experience = form.cleaned_data['Type_randonneurs']
+            sortie_.meteo = form.cleaned_data['Meteo']
+            sortie_.difficulte = form.cleaned_data['Difficulte_ressentie']
+            sortie_.commentaire = form.cleaned_data['Commentaire']
+            sortie_.save()
+        else:
+            sortie_ = get_list_or_404(sortie)
+    else:
+        form = SearchForm()
+    Itineraire_ = get_object_or_404(Itineraire, pk=sortie_.itineraire.id)
+    sortie_list = sortie.objects.filter(itineraire=Itineraire_.id)
+    return render(request, 'polls/Itineraire_Detail.html', {'Itineraire': Itineraire_ , 'form': form, 'sortie_list': sortie_list})

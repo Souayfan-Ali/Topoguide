@@ -1,5 +1,9 @@
 {% load static %}
+{% if user.username %}
+<a href="{% url 'polls:logout' %}"><input type="button" value="logout" ></a>
+{% else %}
 <a href="{% url 'polls:login' %}"><input type="button" value="Login" ></a>
+{% endif %}
 <h1 >{{ user.username }}</h1>
 <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
 {% if Itineraire_list %}

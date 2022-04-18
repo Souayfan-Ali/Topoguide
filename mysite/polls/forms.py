@@ -7,4 +7,4 @@ class SearchForm(forms.Form):
     Type_randonneurs = forms.CharField(max_length=100, required=False)
     Meteo = forms.CharField(max_length=100, required=False)
     Difficulte_ressentie = forms.IntegerField(required=False)
-    Commentaire =forms.CharField()
+    commentaire =forms.CharField()

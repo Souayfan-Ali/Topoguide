@@ -16,7 +16,11 @@
 <tr>
     <th>{{ sortie.utilisateur }}</th>
     <th>{{ sortie.date_de_sortie }}</th>
+    {% if user.username == sortie.utilisateur %}
+    <th><a href="{% url 'polls:Consulter' sortie.id %}"><input type="button" value="Modifier"></a></th>
+    {% else %}
     <th><a href="{% url 'polls:Consulter' sortie.id %}"><input type="button" value="Consulter"></a></th>
+    {% endif %}
   </tr>{% endfor %}
 </table>
 <a href="{% url 'polls:Ajouter_une_Sortie' Itineraire.id %}"><input type="button" value="Ajouter" ></a>
