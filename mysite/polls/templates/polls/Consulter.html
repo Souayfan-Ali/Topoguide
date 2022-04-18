@@ -1,4 +1,6 @@
+{% extends 'polls/base.html' %}
 {% load static %}
+{% block content %}
 <div>
 <h1 ><a href="{% url 'polls:Itineraire_DetailView' sortie_.itineraire.id %}">{{ sortie_.itineraire.titre }}</a>
     -Sortie de {{ sortie_.utilisateur }}
@@ -45,4 +47,5 @@
     </form>
 </div>
 {% endif %}
+{% endblock content %}
 

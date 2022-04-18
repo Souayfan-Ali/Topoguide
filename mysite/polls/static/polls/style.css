@@ -14,8 +14,40 @@
     padding-bottom: 12px;
     text-align: left;
   }
-  #main-navbar{
-    color: white;
-    min-height: 14vh;
-    font-size: 15px;
+  #customers2 {
+    font-family: Arial;
+    border-collapse: collapse;
+    width: 100%;
   }
+  #customers2 td, #customers2 th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  #customers2 th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: middle;
+  }
+.fixed {
+    position: relative;
+    height: 50px;
+    background-color: rgba(32, 232, 232, 0.175);
+} 
+.topleft {
+  position: absolute;
+  left: 6px;
+  top: 13px;
+  font-size: 20px;
+}
+.topright{
+  position: absolute;
+  right: 6px;
+  top: 13px;
+  font-size: 20px;
+}
+.topright2{
+  position: absolute;
+  right: 100px;
+  top: 16px;
+  font-size: 15px;
+}

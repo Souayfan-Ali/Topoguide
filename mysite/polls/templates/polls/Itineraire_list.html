@@ -1,13 +1,8 @@
+{% extends 'polls/base.html' %}
 {% load static %}
-{% if user.username %}
-<a href="{% url 'polls:logout' %}"><input type="button" value="logout" ></a>
-{% else %}
-<a href="{% url 'polls:login' %}"><input type="button" value="Login" ></a>
-{% endif %}
-<h1 >{{ user.username }}</h1>
-<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
-{% if Itineraire_list %}
-<div>
+{% block content %}
+    {% if Itineraire_list %}
+    <div>
     <div>
         <h1 >Itineraire</h1>
     </div>
@@ -27,8 +22,8 @@
         <th>{{ Itineraire.difficulte_estimee }}</th>
       </tr>{% endfor %}
     </table>
-{% else %}
+    {% else %}
     <p>No polls are available.</p>
-
-{% endif %}
-</div>
+        {% endif %}
+    </div>
+{% endblock content %}

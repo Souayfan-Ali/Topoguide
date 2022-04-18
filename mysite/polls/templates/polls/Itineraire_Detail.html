@@ -1,12 +1,11 @@
+{% extends 'polls/base.html' %}
 {% load static %}
-
-<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
 {% block content %}
 <div>
 <h1 >{{ user.username }}</h1>
 <h1 >{{ Itineraire.titre }}</h1>
 </div>
-<table id="customers">
+<table id="customers2">
     <tr>
         <th>par</th>
         <th>Date</th>
@@ -23,5 +22,7 @@
     {% endif %}
   </tr>{% endfor %}
 </table>
+{% if user.username %}
 <a href="{% url 'polls:Ajouter_une_Sortie' Itineraire.id %}"><input type="button" value="Ajouter" ></a>
+{% endif %}
 {% endblock content %}
