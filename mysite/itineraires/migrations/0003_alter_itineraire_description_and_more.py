@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('polls', '0002_sortie_commentaire_alter_itineraire_description'),
+        ('itineraires', '0002_sortie_commentaire_alter_itineraire_description'),
     ]
 
     operations = [

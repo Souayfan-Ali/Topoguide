@@ -14,7 +14,7 @@
     padding-bottom: 12px;
     text-align: left;
   }
-  #customers2 {
+#customers2 {
     font-family: Arial;
     border-collapse: collapse;
     width: 100%;
@@ -98,7 +98,6 @@
   border-radius: 5px;
   background-color: #bab9b9;
   padding: 20px;
-
 }
 .div2 {
   position: absolute;
@@ -114,8 +113,17 @@
   background-color: #bab9b9;
   padding: 20px;
 }
-  input[type=submit]{
-  position: absolute;
+.div4 {
+  margin-top: 10%;
+  width: 300px;
+  left: 30%;
+  position: relative;
+  border-radius: 5px;
+  background-color: #bab9b9;
+  padding: 20px;
+}
+input[type=submit]{
+  position: relative;
   width: 30%;
   background-color: #4CAF50;
   color: white;
@@ -125,9 +133,8 @@
   border-radius: 4px;
   cursor: pointer;
   }
-  input[type=reset] {
+input[type=reset] {
     position: relative;
-    left: 40%;
     width: 30%;
     background-color: #4CAF50;
     color: white;
@@ -137,7 +144,7 @@
     border-radius: 4px;
     cursor: pointer;
   }
-  select,input[type=text],select,input[type=textarea]{
+input[type=text],select,input[type=password],input[type=date],input[type=number]{
     width: 80%;
     padding: 5px 20px;
     margin: 8px 0;
@@ -145,22 +152,16 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    }
-    input[type=date]{
-      width: 60%;
-      padding: 5px 20px;
-      margin: 8px 0;
-      display: inline-block;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-      }
-input[type=number]{
-      width: 80%;
-      padding: 5px 20px;
-      margin: 8px 0;
-      display: inline-block;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-      }
+}
+input[type=textarea]{
+  width: 70%;
+  padding: 5px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.pre_style {
+  font-family: Arial;
+  font-size: 13px;
+}

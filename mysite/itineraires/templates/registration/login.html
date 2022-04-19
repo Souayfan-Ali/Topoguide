@@ -1,0 +1,12 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'itineraires/style.css' %}">
+<body style=" background-color: #18208b;">
+<div class="div4">
+<form method="post" action="{% url 'itineraires:login' %}">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="login">
+    <input type="hidden" name="next" value="{{ next }}">
+</form>
+</div>
+</body>

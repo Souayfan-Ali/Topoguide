@@ -1,4 +1,4 @@
-{% extends 'polls/base.html' %}
+{% extends 'itineraires/base.html' %}
 {% load static %}
 {% block content %}
     {% if Itineraire_list %}
@@ -7,6 +7,7 @@
         <h1 >Itineraire</h1>
     </div>
     <ul>
+    <div style="position: relative;left: 5%;width: 80%;">
     <table id="customers">
         <tr>
             <th>Destination</th>
@@ -16,14 +17,15 @@
           </tr>
     {% for Itineraire in Itineraire_list %}
     <tr>
-        <th><a href="{% url 'polls:Itineraire_DetailView' Itineraire.id %}">{{ Itineraire.titre }}</a></th>
+        <th><a href="{% url 'itineraires:Itineraire_DetailView' Itineraire.id %}">{{ Itineraire.titre }}</a></th>
         <th>{{ Itineraire.duree_estimee}}</th>
         <th>{{ Itineraire.altitude_max }}</th>
         <th>{{ Itineraire.difficulte_estimee }}</th>
       </tr>{% endfor %}
     </table>
     {% else %}
-    <p>No polls are available.</p>
+    <p>No itineraires are available.</p>
         {% endif %}
     </div>
+</div>
 {% endblock content %}

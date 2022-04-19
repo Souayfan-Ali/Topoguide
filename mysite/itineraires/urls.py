@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 from . import views
-app_name = 'polls'
+app_name = 'itineraires'
 urlpatterns = [
     path('', views.Itineraire_list, name='Itineraire_list'),
     path('<int:Itineraire_id>/', views.Itineraire_DetailView, name='Itineraire_DetailView'),

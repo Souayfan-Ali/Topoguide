@@ -39,7 +39,7 @@ class Migration(migrations.Migration):
                 ('experience', models.CharField(max_length=200)),
                 ('meteo', models.CharField(max_length=200)),
                 ('difficulte', models.IntegerField(verbose_name='la difficulté ressentie')),
-                ('itineraire', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='polls.itineraire')),
+                ('itineraire', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='itineraires.itineraire')),
             ],
         ),
     ]
