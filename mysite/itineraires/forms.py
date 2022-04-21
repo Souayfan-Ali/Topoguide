@@ -5,5 +5,4 @@ from itineraires.models import Sortie
 class SortieForm(ModelForm):
     class Meta:
         model = Sortie
-        exclude = ['utilisateur','itineraire','commentaire']
-        commentaire = forms.CharField(required=False)
+        exclude = ['utilisateur','itineraire']

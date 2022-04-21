@@ -1,33 +1,40 @@
 {% extends 'itineraires/base.html' %}
 {% load static %}
 {% block content %}
-<div style="position: relative;left: 5%">
-<h1 >{{ itineraire.titre }}</h1>
-<img src="{% static img_url %}" width="400" height="300" style="vertical-align:middle;margin:0px 10%">
+<div class="container-sm" style="left:5%">
+<h1 style="color:rgb(255, 0, 0);font-size: 5vw;font-family:Verdana;margin: 2% 0%;font-weight: bold;">{{ itineraire.titre }}</h1>
+<img src="{% static img_url %}"  width=80% height=30% style="vertical-align:middle;">
 <h3>Description:</h3>
-<pre class="pre_style">{{ itineraire.description }}</pre>
+<div>
+<pre class="pre_style" >{{ itineraire.description }}</pre>
 </div>
 <div style="position: relative;left: 5%;width: 80%;">
-<table id="customers2">
+<table id="itineraire_Detail_table">
     <tr>
         <th style="color:rgb(255, 0, 0);">Par</th>
+        <th style="color:rgb(255, 0, 0);">Experience</th>
+        <th style="color:rgb(255, 0, 0);">Difficulte</th>
         <th style="color:rgb(255, 0, 0);">Date</th>
         <th></th>
       </tr>
 {% for sortie in sortie_list %}
 <tr>
     <th>{{ sortie.utilisateur }}</th>
+    <th>{{ sortie.experience }}</th>
+    <th>{{ sortie.difficulte }}/5</th>
     <th>{{ sortie.date_de_sortie }}</th>
     {% if user.username == sortie.utilisateur %}
-    <th><a href="{% url 'itineraires:Consulter' sortie.id %}"><input type="button" class="button3" value="Modifier"></a></th>
+    <th><div><a href="{% url 'itineraires:Consulter' sortie.id %}"><input type="button" class="button_Modifier_Consulter_Supprimer" value="Modifier"></a></div>
+      <div style="position: relative;top: 4px;"><a href="{% url 'itineraires:Remove' sortie.id %}"><input type="button" class="button_Modifier_Consulter_Supprimer" value="Supprimer"></a></div></th>
     {% else %}
-    <th><a href="{% url 'itineraires:Consulter' sortie.id %}"><input type="button" class="button3" value="Consulter"></a></th>
+    <th><a href="{% url 'itineraires:Consulter' sortie.id %}"><input type="button" class="button_Modifier_Consulter_Supprimer" value="Consulter"></a></th>
     {% endif %}
   </tr>{% endfor %}
 </table>
 {% if user.username %}
 <div class="topright3">
-<a href="{% url 'itineraires:Ajouter_une_Sortie' itineraire.id %}"><input type="button" value="Ajouter" class="button2" ></a>
+<a href="{% url 'itineraires:Ajouter_une_Sortie' itineraire.id %}"><input type="button" value="Ajouter" class="button_ajouter" ></a>
+</div>
 </div>
 </div>
 {% endif %}

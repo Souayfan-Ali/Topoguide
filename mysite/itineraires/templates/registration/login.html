@@ -1,7 +1,8 @@
 {% load static %}
+<div class="container-sm">
 <link rel="stylesheet" type="text/css" href="{% static 'itineraires/style.css' %}">
 <body style=" background-color: #18208b;">
-<div class="div4">
+<div class="div_login">
 <form method="post" action="{% url 'itineraires:login' %}">
     {% csrf_token %}
     {{ form }}

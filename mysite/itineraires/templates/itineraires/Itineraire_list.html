@@ -1,14 +1,20 @@
 {% extends 'itineraires/base.html' %}
 {% load static %}
 {% block content %}
+<div class="container-sm">
+<div style="position: relative;left: 10%;">
+    <h1 style="font-size: 5vw;;color: brown;">Bienvenue</h1>
+    <h1 style="font-size: 3vw;color: brown;">Topguide-Donner un sens pour votre vie</h1>
+<img src="{% static "itineraires/images/itiniraire_list_image.jpg" %}" class="itineraire_list_image">
+</div>
     {% if itineraire_list %}
-    <div>
-    <div>
-        <h1 >itineraire</h1>
+<div>
+    <div style="position: relative;left: 5%;font-family: Tahoma;">
+        <h2 >Itineraire:</h2>
     </div>
     <ul>
     <div style="position: relative;left: 5%;width: 80%;">
-    <table id="customers">
+    <table id="itineraire_table">
         <tr>
             <th>Destination</th>
             <th>Duration</th>
@@ -20,12 +26,13 @@
         <th><a href="{% url 'itineraires:Itineraire_DetailView' itineraire.id %}">{{ itineraire.titre }}</a></th>
         <th>{{ itineraire.duree_estimee}}</th>
         <th>{{ itineraire.altitude_max }}</th>
-        <th>{{ itineraire.difficulte_estimee }}</th>
+        <th>{{ itineraire.difficulte_estimee }}/5</th>
       </tr>{% endfor %}
     </table>
     {% else %}
     <p>No itineraires are available.</p>
         {% endif %}
     </div>
+</div>
 </div>
 {% endblock content %}

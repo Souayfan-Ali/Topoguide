@@ -8,7 +8,8 @@ urlpatterns = [
     path('<int:itineraire_id>/', views.Itineraire_DetailView, name='Itineraire_DetailView'),
     path('<int:itineraire_id>/Ajouter_une_Sortie/', views.Ajouter_une_Sortie, name='Ajouter_une_Sortie'),
     path('Consulter/<int:sortie_id>/', views.Consulter, name='Consulter'),
-    path('Modifier/<int:sortie_id>/', views.Modifier, name='Modifier'),
+    path('Apres_suppression/<int:sortie_id>/', views.Remove, name='Remove'),
+    path('Apres_Modification/<int:sortie_id>/', views.Modifier, name='Modifier'),
     path('accounts/', include('django.contrib.auth.urls'),name='login'),
     path('accounts/', include('django.contrib.auth.urls'),name='logout'),
 ]
