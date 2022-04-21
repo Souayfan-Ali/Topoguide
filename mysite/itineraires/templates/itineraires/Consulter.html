@@ -19,29 +19,29 @@
 {% if user.username == sortie_.utilisateur %}
 <div class="div3">
     <form action="{% url 'itineraires:Modifier' sortie_.id %}" method="post" >
-        <label for="Date">Date:</label><br>
-        <input id="Date" type="date" name="Date"><br>
-        <label for="Duree_reelle">Duree reelle:</label><br>
-        <input id="Duree_reelle" type="text" name="Duree_reelle"><br>
-        <label for="Nb_participants"> Nombre de participants:</label><br>
-        <input id="Nb_participants" type="number" name="Nb_participants"><br>
-        <label for="Type_randonneurs">Type de randonneurs:</label><br>
-        <select name="Type_randonneurs" id="Type_randonneurs">
+        <label for="date_de_sortie">Date </label><br>
+        <input id="date_de_sortie" type="date" name="date_de_sortie"><br>
+        <label for="duree_reelle">Duree reelle:</label><br>
+        <input id="duree_reelle" type="text" name="duree_reelle"><br>
+        <label for="nombre_de_personne"> Nb participants:</label><br>
+        <input id="nombre_de_personne" type="number" name="nombre_de_personne"><br>
+        <label for="experience">Type randonneurs:</label><br>
+        <select name="experience" id="experience">
             <option value="debutants">debutants</option>
             <option value="tous experimentes">tous experimentes</option>
             <option value="mixte">mixte</option>
           </select><br>
-        <label for="Meteo"> Meteo</label><br>
-        <select name="Meteo" id="Meteo">
+        <label for="meteo"> Meteo</label><br>
+        <select name="meteo" id="meteo">
             <option value="bonne">bonne</option>
             <option value="moyenne">moyenne</option>
             <option value="mauvaise">mauvaise</option>
           </select><br>
-        <label for="Difficulte_ressentie">Difficulte ressentie:</label><br>
-        <input id="Difficulte_ressentie" type="number" name="Difficulte_ressentie"><br>
+        <label for="difficulte">Difficulte ressentie:</label><br>
+        <input id="difficulte" type="number" name="difficulte"><br>
         <label for="commentaire">Commentaire:</label><br>
         <input id="commentaire" type="textarea" name="commentaire"><br>
-        <input type="submit" class="div1" value="Enrigistre">
+        <input type="submit"  value="Enrigistre">
         {% csrf_token %}
         {{ form }}
         <input type="reset" value="Annuler">

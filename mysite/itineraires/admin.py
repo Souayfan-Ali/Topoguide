@@ -1,7 +1,6 @@
 from django.contrib import admin
-from django.contrib import admin
 
-from .models import sortie,Itineraire
+from .models import Sortie,Itineraire
 
 admin.site.register(Itineraire)
-admin.site.register(sortie)
+admin.site.register(Sortie)

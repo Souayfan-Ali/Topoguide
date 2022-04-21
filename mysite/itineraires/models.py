@@ -15,7 +15,7 @@ class Itineraire(models.Model):
     def __str__(self):
         return self.titre
 
-class sortie(models.Model):
+class Sortie(models.Model):
     utilisateur = models.CharField(max_length=200)
     itineraire = models.ForeignKey('Itineraire', on_delete=models.CASCADE) 
     date_de_sortie = models.DateTimeField('date de sortie')

@@ -1,10 +1,10 @@
 {% extends 'itineraires/base.html' %}
 {% load static %}
 {% block content %}
-    {% if Itineraire_list %}
+    {% if itineraire_list %}
     <div>
     <div>
-        <h1 >Itineraire</h1>
+        <h1 >itineraire</h1>
     </div>
     <ul>
     <div style="position: relative;left: 5%;width: 80%;">
@@ -15,12 +15,12 @@
             <th>Max altitude</th>
             <th>Difficulty</th>
           </tr>
-    {% for Itineraire in Itineraire_list %}
+    {% for itineraire in itineraire_list %}
     <tr>
-        <th><a href="{% url 'itineraires:Itineraire_DetailView' Itineraire.id %}">{{ Itineraire.titre }}</a></th>
-        <th>{{ Itineraire.duree_estimee}}</th>
-        <th>{{ Itineraire.altitude_max }}</th>
-        <th>{{ Itineraire.difficulte_estimee }}</th>
+        <th><a href="{% url 'itineraires:Itineraire_DetailView' itineraire.id %}">{{ itineraire.titre }}</a></th>
+        <th>{{ itineraire.duree_estimee}}</th>
+        <th>{{ itineraire.altitude_max }}</th>
+        <th>{{ itineraire.difficulte_estimee }}</th>
       </tr>{% endfor %}
     </table>
     {% else %}

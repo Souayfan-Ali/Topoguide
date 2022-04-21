@@ -2,8 +2,10 @@
 {% load static %}
 {% block content %}
 <div style="position: relative;left: 5%">
-<h1 >{{ Itineraire.titre }}</h1>
-<pre class="pre_style">{{ Itineraire.description }}</pre>
+<h1 >{{ itineraire.titre }}</h1>
+<img src="{% static img_url %}" width="400" height="300" style="vertical-align:middle;margin:0px 10%">
+<h3>Description:</h3>
+<pre class="pre_style">{{ itineraire.description }}</pre>
 </div>
 <div style="position: relative;left: 5%;width: 80%;">
 <table id="customers2">
@@ -25,7 +27,7 @@
 </table>
 {% if user.username %}
 <div class="topright3">
-<a href="{% url 'itineraires:Ajouter_une_Sortie' Itineraire.id %}"><input type="button" value="Ajouter" class="button2" ></a>
+<a href="{% url 'itineraires:Ajouter_une_Sortie' itineraire.id %}"><input type="button" value="Ajouter" class="button2" ></a>
 </div>
 </div>
 {% endif %}
